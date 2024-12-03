@@ -1,38 +1,5 @@
-class Car:
-    """Classe carro, atributos make, model, year. Métodos: get_descriptive_name."""
-    
-    def __init__(self, make, model, year):
-        """Inicializa os atributos para descrevr m carro"""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
-        
-    def get_descriptive_name(self):
-        """Retorna um nome descritivo, formatado elegantemente"""
-        long_name = f'{self.year} {self.make} {self.model}'
-        return long_name.title()
-    
-    def read_odometer(self):
-        """Exibe uma frase mostrando a quilometragem do carro, em milhas"""
-        print(f'Este carro tem {self.odometer_reading} milhas rodadas.')
-    
-    def update_odometer(self, mileage):
-        """Define a leitura do hodômetro para o valor fornecido"""
-        #self.odometer_reading = mileage
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print('Não é possível retroceder o hodômetro')
-    
-    def increment_odometer(self, miles):
-        """Adiciona a quantidade fornecida à leitura do hodômetro"""
-        self.odometer_reading += miles
-    
-    def fill_gas_tank(self):
-        """Encher o tanque de gasolina"""
-        print('Enchendo o tanque de gasolina')
-    
+""" Conjunto de classes que pode ser usado para representar carros elétricos"""
+from car import Car    
 class EletricCar(Car):
     """Representa aspectos de um carro, específicos para veículos elétricos"""
     
@@ -69,9 +36,20 @@ class Battery:
             range_ = 225
         
         print(f'Este carro percorre aproximadamente {range_}  milhas com a bateria completamente carregada.')
-    
-my_leaf = EletricCar('nissan', 'leaf', 2024)
-print(my_leaf.get_descriptive_name())
-#my_leaf.fill_gas_tank()
-my_leaf.battery.describe_battery()
+
+    def upgrade_battery(self):
+        if self.battery_size != 65:
+            self.battery_size = 65
+        print(f'Upgrade battery ok. Tamanho da bateria = {self.battery_size}.')
+            
+            
+# my_leaf = EletricCar('nissan', 'leaf', 2024)
+# print(my_leaf.get_descriptive_name())
+# #my_leaf.fill_gas_tank()
+# my_leaf.battery.describe_battery()
+# my_leaf.battery.get_range()
+
+my_leaf = EletricCar('Nisan', 'leaf', 2024)
+my_leaf.battery.get_range()
+my_leaf.battery.upgrade_battery()
 my_leaf.battery.get_range()

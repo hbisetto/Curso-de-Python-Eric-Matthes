@@ -7,16 +7,22 @@ class Admin(User):
         self.phone = phone
         self.age = age
         self.gender = gender
-        self.privileges = [
+        self.privileges = Privileges()
+    
+class Privileges():
+    
+    def __init__(self):
+        self.list_privileges = [
             "can add post",
-            "can delete post",
+            "can delete post", 
             "can ban user",
         ]
-    
+
     def show_privileges(self):
         print('Privilegios do admin:')
-        for privilege in self.privileges:
+        for privilege in self.list_privileges:
             print(privilege)
-    
+
+
 admin = Admin('Henrique', 'Bisetto', 21321312389, 35, 'M')
-admin.show_privileges()
+admin.privileges.show_privileges()

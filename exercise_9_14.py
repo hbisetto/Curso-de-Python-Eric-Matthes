@@ -16,8 +16,8 @@ def loteria(possibilidades):
                 add = True
     return list_winner
 
-possibilities = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'A', 'B', 'C', 'D', 'E')    
-lista_vencedora = loteria(possibilities)
+# possibilities = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'A', 'B', 'C', 'D', 'E')    
+# lista_vencedora = loteria(possibilities)
 
-print("O bilhete vencedor é: ")
-print(lista_vencedora)
+# print("O bilhete vencedor é: ")
+# print(lista_vencedora)
